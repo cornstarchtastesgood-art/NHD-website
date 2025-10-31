@@ -1,0 +1,162 @@
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("background.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- Logo + Navbar Wrapper --- */
+.header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 1.0); /* darker menu background */
+  padding: 0 20px;
+}
+
+/* --- Logo Container --- */
+.image-container {
+  height: 55px;
+  margin-right: 20px;
+  margin-left: -10px; /* logo extended more to the left */
+}
+
+.image-container img {
+  height: 55px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 10px #00aaff);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  flex: 1;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 20px;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  border-radius: 999px; /* pill shape */
+}
+
+.navbar a:hover {
+  background-color: #00aaff;
+  color: #000;
+  box-shadow: 0 0 10px #00aaff;
+  transform: translateY(-2px);
+}
+
+/* --- Main Content --- */
+main {
+  max-width: 1100px;
+  margin: 0 auto 100px auto;  /* top spacing removed to reach menu */
+  padding: 60px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.90); /* slightly lighter black panel */
+  border-radius: 16px;
+  box-shadow: 0 0 35px rgba(0, 170, 255, 0.4);
+  position: relative;          /* needed for side borders */
+  z-index: 1;
+}
+
+h3 {
+  font-size: 2.4rem;
+  color: #00aaff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px #00aaff55;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin: 15px 0;
+}
+
+/* --- Side Borders Matching Black Panel Height --- */
+.side-border {
+  position: absolute;          /* inside main panel */
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: url("background.png") no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+  filter: brightness(0.5);     /* darkens for contrast */
+  pointer-events: none;
+}
+
+.side-border.left {
+  left: -40px;  /* place outside the main panel */
+}
+
+.side-border.right {
+  right: -40px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .image-container {
+    margin: 0 0 10px 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    max-width: 90%;
+    padding: 30px;
+  }
+
+  .side-border {
+    width: 20px;
+  }
+
+  .side-border.left {
+    left: -20px;
+  }
+
+  .side-border.right {
+    right: -20px;
+  }
+}
+.h3{
+  text-align: center;
+  color: #00aaff;
+  size: 20cap;
+}

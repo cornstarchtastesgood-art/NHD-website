@@ -1,0 +1,268 @@
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("background.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- Logo + Navbar Wrapper --- */
+.header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 1.0); /* darker menu background */
+  padding: 0 20px;
+}
+
+/* --- Logo Container --- */
+.image-container {
+  height: 55px;
+  margin-right: 20px;
+  margin-left: -10px; /* logo extended more to the left */
+}
+
+.image-container img {
+  height: 55px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 10px #00aaff);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  flex: 1;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 20px;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  border-radius: 999px; /* pill shape */
+}
+
+.navbar a:hover {
+  background-color: #00aaff;
+  color: #000;
+  box-shadow: 0 0 10px #00aaff;
+  transform: translateY(-2px);
+}
+
+/* --- Main Content --- */
+main {
+  max-width: 1100px;
+  margin: 0 auto 100px auto;  /* top spacing removed to reach menu */
+  padding: 60px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.90); /* slightly lighter black panel */
+  border-radius: 16px;
+  box-shadow: 0 0 35px rgba(0, 170, 255, 0.4);
+  position: relative;          /* needed for side borders */
+  z-index: 1;
+}
+
+h3 {
+  font-size: 2.4rem;
+  color: #00aaff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px #00aaff55;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin: 15px 0;
+}
+
+/* --- Side Borders Matching Black Panel Height --- */
+.side-border {
+  position: absolute;          /* inside main panel */
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: url("background.png") no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+  filter: brightness(0.5);     /* darkens for contrast */
+  pointer-events: none;
+}
+
+.side-border.left {
+  left: -40px;  /* place outside the main panel */
+}
+
+.side-border.right {
+  right: -40px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .image-container {
+    margin: 0 0 10px 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    max-width: 90%;
+    padding: 30px;
+  }
+
+  .side-border {
+    width: 20px;
+  }
+
+  .side-border.left {
+    left: -20px;
+  }
+
+  .side-border.right {
+    right: -20px;
+  }
+}
+h4{
+  text-align: left;
+  color: #00aaff;
+}
+.float-image {
+  float: right;             /* Image on the right, text flows around it */
+  margin: 0 0 15px 25px;    /* Top, Right, Bottom, Left spacing */
+  width: 300px;             /* Adjust image size */
+  border-radius: 10px;      /* Optional rounded corners */
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.4); /* Matches your site’s glow theme */
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* space between images */
+}
+
+.gallery-img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,170,255,0.4);
+}
+
+.gallery-img:not(:last-child) {
+  border-right: 2px solid #00aaff; /* vertical line color */
+  padding-right: 20px; /* spacing between line and next image */
+}
+.float-image {
+  .float-image {
+  float: right;
+  width: 300px;
+  margin: -300px 40px 30px 40px; /* moves image UP by 20px */
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 170, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+}
+
+.float-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 170, 255, 1); /* stronger glow on hover */
+}
+
+/* --- Stats Box --- */
+.stats-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0,0,0,0.75);
+  border: 1px solid rgba(0,170,255,0.3);
+  box-shadow: 0 0 20px rgba(0,170,255,0.3);
+  border-radius: 16px;
+  padding: 12px 20px;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.stats-box:hover {
+  box-shadow: 0 0 35px rgba(0,170,255,0.5);
+}
+
+/* --- Visit Counter --- */
+.visit-counter {
+  font-weight: bold;
+  color: #e0f8ff;
+  text-shadow: 0 0 6px #00aaff77;
+  font-size: 1.1rem;
+}
+
+/* --- Vote Buttons --- */
+.vote-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vote-btn {
+  background: none;
+  border: none;
+  color: #00aaff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.vote-btn:hover {
+  transform: scale(1.2);
+  color: #66d9ff;
+}
+
+.vote-btn.active.upvote {
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+.vote-btn.active.downvote {
+  color: #ff5555;
+  text-shadow: 0 0 8px #ff5555;
+}
+
+.vote-count {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #e0f8ff;
+  text-shadow: 0 0 6px #00aaff77;
+}
+
